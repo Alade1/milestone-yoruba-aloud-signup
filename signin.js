@@ -1,69 +1,76 @@
-const signIn = document.getElementById("signIn");
-signIn.innerText="Sign In";
+let signInBtn = document.getElementById("signIn")
+signInBtn.textContent="Sign In"
 
-signIn.addEventListener("click", (event)=>{
-    event.preventDefault();
-    const Email = document.getElementById("email");
-    const Password = document.getElementById("password");
-     signIn.innerText ="Loading...";
-     signIn.classList.add("pulse");
+signInBtn.addEventListener("click",(event)=>{
 
-    if (
-        Email === "  " || Password === " "
-    ){
-        swal.fire({
-            icon: "info",
-            text: "All fields are required",
-            confirmButtonText: "ok",
-          })  
-          signIn.innerText = "Sign In";
-          signIn.classList.remove ("pulse");
+    event.preventDefault()
 
-    }
-    else{
-        const SignInData = new FormData();
-        signIn.append("Email", Email);
-        signIn.append("Password", Password);
+    //getting values of the inputs
 
-        const signReq = {
-            method: "POST",
-            body: SignInData,
-        };
+    const email =document.getElementById("email").value
+    const password =document.getElementById("password").value
 
-        const URL ="https://pluralcodesandbox.com/yorubalearning/api/admin_login";
+    signInBtn.textContent="Loading...."
+    signInBtn.classList.add('pulse')
 
-        fetch(URL, signReq)
-        .then((response)=>response.json())
-        .then((result)=>{
-            console.log(result);
-            console.log(result.status);
+if (password==="" || email==="") {
+    swal.fire({
+        icon: "info",
+        text: "All fields are required",
+        confirmButtonText: "ok",
+      });
+      signInBtn.innerText = "Sign In";
+      signInBtn.classList.remove("pulse");
+    
+} else {
+    const signInData = new FormData();
+    signInData.append('email', email)
+    signInData.append('password', password)
 
-            localStorage.setItem("adminObj", JSON.stringify(result));
+    const signReg = {
+        method: "POST",
+        body: signInData,
+      };
+      const URL = "https://pluralcodesandbox.com/yorubalearning/api/admin_login";
 
-            const getAdminObject =localStorage.getItem("adminObj");
-            const adminObj = JSON.parse(getAdminObject);
-            if(adminObj.hasOwnProperty("Email")){
-                location.href="./dashboard.html";
-            }
-            else{
-                Swal.fire({
-                    icon :"Warning",
-                    text: "Login Unsuccessful",
-                    confirmButtonColor : "#2D85DE",
+    fetch(URL, signReg)
+  
+      .then((response) => response.json())
 
-
-                });
-                signIn.innerText = "Sign In";
-                signIn.classList.remove ("pulse");
-
-            }
-
-        } )
-
-
-
-
-    }
+  
+      .then((result) => {
+        console.log(result, result.status);
 
     
-})
+        localStorage.setItem("adminObj", JSON.stringify(result));
+
+    
+        const getAdminObj = localStorage.getItem("adminObj");
+
+    
+        const adminObj = JSON.parse(getAdminObj);
+
+    
+        if (adminObj.hasOwnProperty("email")) {
+          location.href = "dashboard.html";
+        }
+    
+        else {
+          Swal.fire({
+            icon: "warning",
+            title: "Login Unsuccessful",
+            text: "Invalid email or password",
+          });
+        }
+
+      
+        signIn.textContent = "Sign In";
+        signIn.classList.remove("pulse");
+      })
+
+    
+      .catch((error) => {
+        console.log("Error", error);
+      });
+  }
+});
