@@ -1,0 +1,136 @@
+
+
+.nav-side ul li a {
+    text-decoration: none;
+    font-family: 'Short Stack', cursive;
+    color: white;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-top: 50px;
+    font-size: 11px;
+    
+}
+ ul,.title{
+    font-family: 'Short Stack', cursive;
+    color: white;
+    padding-top: 20px;
+    font-size:20px;
+    padding-right: 10px;
+}
+
+
+.nav-bar{
+    margin-top: 30px;
+
+}
+.nav-side ul{
+    margin:0;
+}
+.nav-side ul li {
+  list-style: none;
+
+}
+.nav-side{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+.left-side{
+    background-color: #4594e1;  
+    
+}
+.right-side{
+    padding-top: 20px;
+}
+.right-side i{
+    color:#4594e1;
+    font-size: 20px;
+}
+.right-side  span{
+    font-family: 'Short Stack', cursive;
+}
+.summary-boxes{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    gap:40px;
+}
+.total-categories,.learning-materials,.Total-Sub-Categories,.total-quiz, .total-students,.top-three-students{
+    position: relative;
+    background: #FDFFFE;
+    box-shadow: 0px 60px 70px rgba(212, 217, 232, 0.2);
+    border-radius: 8px;
+    width: 130px;
+    height: 80px;
+  
+    
+}
+.total-categories i{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.total-categories p{
+    font-size: 10px;
+    font-family: 'Short Stack', cursive;
+    padding-left: 10px;
+
+}
+.learning-materials i{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.learning-materials p{
+    font-size: 10px;
+    font-family: 'Short Stack', cursive;
+    padding-left: 10px;
+}
+.Total-Sub-Categories i{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.Total-Sub-Categories p{
+    font-size: 10px;
+    font-family: 'Short Stack', cursive;
+    padding-left: 10px;
+
+}
+.total-quiz i{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.total-quiz p{
+    font-size: 10px;
+    font-family: 'Short Stack', cursive;
+    padding-left: 10px;
+}
+.total-students i{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.total-students p{
+    font-size: 10px;
+    font-family: 'Short Stack', cursive;
+    padding-left: 10px;
+
+}
+.top-three-students button{
+    font-size: 7px;
+    font-family: 'Short Stack', cursive;
+    margin-top: 30px;
+    margin-left: 20px;
+    background-color: #4594e1;
+    border: none;
+    border-radius: 3px;
+    height: 20px;
+    color: white;
+
+}
+
+
+
+
+
+
+
+
+
