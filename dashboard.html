@@ -31,35 +31,35 @@
         </div>
 
         <div class="right-side">
-            <i class="menu" class='bx bx-menu'></i> <span>FemiSunday</span>
+            <i class='bx bx-menu'></i> <span id ="adminUsername"> </span>
             <div class="summary-boxes">
             <div class="total-categories">
                 <i class='bx bx-library'></i>
                 <p>Total Categories</p>
-                <p>2</p>
+                <span id="total-categories"></span>
             </div>
             <div class="learning-materials"> 
                 <i class="bx bx-book-content"></i>
                 <p>Learning  Materials</p>
-                <p>12</p>
+                <span id="learning-materials"></span>
             </div>
             <div class="Total-Sub-Categories">
                 <i class='bx bx-library'></i>
                 <p>Total Sub-Categories</p>
-                <p>37</p>    
+                <span id="Total-Sub-Categories"></span>    
             </div>
             <div class="total-quiz">
                 <i class="bx bx-certification"></i>
                 <p>Total Quiz</p>
-                <p>0</p>
+                <span id="total-quiz"></span>
             </div>
             <div class="total-students">
                 <i class='bx bxs-graduation'></i>
                 <p>Total Students</p>
-                <p>9</p>
+                <span id="total-students"></span>
             </div>
             <div class="top-three-students">
-                <button>Top Three Students</button>
+                <button id="top-students">Top Three Students</button>
             </div>
             
             </div>
@@ -68,5 +68,34 @@
 
     </div> 
 
+    <div id="pageModal" class="page-modal">
+        <div class="loader"></div>
+      </div>
+
+      <div id="studentModal" class="student-modal">
+        <div id="studentModalTitle" class="student-modal-title">
+          <span>Top Three Students</span>
+          <i class="bx bx-x" onclick="closeStudentModal()"></i>
+        </div>
+        <div id="topThreeScores"></div>
+      </div>
+
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Position</th>
+              <th>Total Score</th>
+            </tr>
+          </thead>
+          <tbody id="allStudents"></tbody>
+        </table>
+      </div>
+    </div>
+
+<script src="./dashboard.js"></script>
 </body>
 </html>
